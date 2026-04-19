@@ -28,11 +28,3 @@ jobs:
           file: ./app/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/meu-app-go:latest
-
-      - name: Build and push Python Populador
-        uses: docker/build-push-action@v5
-        with:
-          context: ./scripts/to_postgres
-          file: ./scripts/to_postgres/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/script-populador:latest

@@ -1,7 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-# 1. Configurações de Conexão (Ajuste com seus dados)
 DB_USER = 'postgres'
 DB_PASSWORD = 'postgres'
 DB_HOST = 'postgres'
