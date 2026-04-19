@@ -1,7 +1,3 @@
-Para fechar o projeto com chave de ouro, aqui está um modelo de **README.md** profissional. Ele explica a arquitetura, como as peças se encaixam e como rodar tudo utilizando a estrutura de pastas que você organizou.
-
----
-
 # 🎬 Movie Data Pipeline & Dashboard
 
 Este projeto demonstra um pipeline de dados completo: desde a ingestão de dados CSV para um banco de dados PostgreSQL até a exibição de métricas em um dashboard web desenvolvido em Go.
