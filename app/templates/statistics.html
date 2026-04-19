@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Estatísticas de Cinema</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        nav {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        li {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Lista de Filmes</a>
+        <a href="/estatisticas">Dashboard de Estatísticas</a>
+    </nav>
+
+    <h1>Estatísticas e Insights</h1>
+
+    <div class="card">
+        <h2>Top 5 Filmes Mais Populares (Mais Avaliados)</h2>
+        <ul>
+            {{range .TopMovies}}
+            <li><strong>{{.Title}}</strong> - {{.Count}} avaliações</li>
+            {{end}}
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Gênero com Melhor Avaliação Média</h2>
+        <p>O gênero <strong>{{.BestGenre.Genre}}</strong> lidera com uma nota média de <strong>{{printf "%.2f"
+                .BestGenre.Average}}</strong>.</p>
+    </div>
+
+    <div class="card">
+        <h2>País que Mais Assiste Filmes</h2>
+        <p>O país campeão é <strong>{{.TopCountry.Country}}</strong> com <strong>{{.TopCountry.Count}}</strong>
+            interações registradas.</p>
+    </div>
+</body>
+
+</html>
